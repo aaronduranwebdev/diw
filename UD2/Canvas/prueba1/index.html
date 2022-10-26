@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios Canvas</title>
+    <script src="js/scripts.js"></script>
+</head>
+<body>
+    <section>
+        <h3>Ejemplos Canvas</h3>
+    </section>
+    <section>
+        <h4>1. Lienzo con degradado</h4>
+    </section>
+    <canvas id="lienso" width="800px" height="600px">
+        <p>Tu navegador no soporta canvas</p>
+    </canvas>
+    <script>
+        var lienso = document.getElementById('lienso');
+        var ctx = lienso.getContext('2d');
+        degradado();
+        linea();
+        circulo('blue', 'white', 20, 400, 300, 100);
+        
+        triangulo();
+    </script>
+    <section><h4>2. Triángulo con canvas</h4></section>
+
+</body>
+</html>

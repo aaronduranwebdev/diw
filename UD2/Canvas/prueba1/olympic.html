@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bandera olímpica</title>
+    <script src="js/scripts.js"></script>
+</head>
+<body>
+    <canvas id="banderaolimpica" width="1280" height="800">
+
+    </canvas>
+    <script>
+        var lienso = document.getElementById('banderaolimpica');
+        var ctx = lienso.getContext('2d');
+        circulo('blue', 'transparent', 20, 120, 170, 100);
+        circulo('yellow', 'transparent', 20, 240, 280, 100);
+        circulo('black', 'transparent', 20, 360, 170, 100);
+        circulo('green', 'transparent', 20, 480, 280, 100);
+        circulo('red', 'transparent', 20, 600, 170, 100);
+        prohibido('red', 'white', 100);
+    </script>
+</body>
+</html>

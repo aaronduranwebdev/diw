@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pelota en movimiento</title>
+    <script src="js/scripts.js"></script>
+</head>
+<body>
+    <canvas id="canvaspelota" width="1200" height="600" style="border: 2px solid #A94BFA">
+        Tu navegador no soporta Javascript
+    </canvas>
+    <div id="info"></div>
+    <script>
+        var canvas = document.getElementById('canvaspelota');
+        var ctx = canvas.getContext('2d');
+        
+        var x1 = canvas.width / 2;
+        var y1 = canvas.height / 2;
+        //var x2 = canvas.width / 3;
+        //var y2 = canvas.height / 3;
+        var dx1 = 5;
+        var dy1 = -5;
+        // Tamaño de las raquetas
+        var palah = 10;
+        var palaw = 75;
+        // Posición de la pala
+        var palax = (canvas.width - palaw) / 2;
+        //var dx2 = 4;
+        //var dy2 = -3;
+        var derpulsa = false;
+        var izqpulsa = false;
+        document.addEventListener('keydown', keyDownHandler, false);
+        document.addEventListener('keyup', keyUpHandler, false);
+        var muertes = 0;
+        setInterval(dibujaBalon, 10);
+
+        //setInterval(dibujaBalon2, 10);
+        //circulo('white', 'red', 100, canvas.width / 2, canvas.height / 2, 15);
+    </script>
+</body>
+</html>
