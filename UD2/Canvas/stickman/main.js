@@ -46,3 +46,12 @@ function dibujarStickman(brazos = false) {
   linea(canvas.width / 2, canvas.height - 80, canvas.width / 2 - 30, canvas.height / 2 + 130, 6, 'white');
   linea(canvas.width / 2, canvas.height - 80, canvas.width / 2 + 30, canvas.height / 2 + 130, 6, 'white');
 }
+function animacion() {
+  if (continuo) {
+    dibujarStickman();
+    continuo = false;
+  } else {
+    dibujarStickman(true);
+    continuo = true;
+  }
+}

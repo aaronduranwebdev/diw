@@ -16,20 +16,21 @@
         var ctx = canvas.getContext("2d");
         var arriba = false;
         var continuo = false;
-        let intervalo1, intervalo2;
+        var animacion;
         dibujarStickman();
         // Barra espaciadora
         document.addEventListener('keypress', function (e) {
 
             e.preventDefault();
             if (e.keyCode == 32 || e.code == 'Space') {
-                if (arriba == false) {
-                    arriba = true;
+                if (!arriba) {
                     dibujarStickman(true);
+                    arriba = true;
                     console.log("Arriba");
                 } else {
-                    arriba = false;
+
                     dibujarStickman(false);
+                    arriba = false;
                     console.log("Abajo");
                 }
 
@@ -39,22 +40,17 @@
         document.addEventListener('keydown', (event) => {
             if (event.ctrlKey) {
                 if (event.keyCode == 67 || event.keyCode == 99) {
-                    continuo = true;
-                    intervalo1 = setInterval(dibujarStickman, 1000, true);
-                    intervalo2 = setInterval(dibujarStickman, 1000, false);
+                    animacion = setInterval(animacion, 100);
                     console.log("Continuo");
-
                 }
             }
         }, false);
-        // Ctrl + s / S
+        // Ctrl + B para pararlo
         document.addEventListener('keydown', (event) => {
             if (event.ctrlKey) {
-                if (event.keyCode == 83 || event.keyCode == 115) {
-
-                    continuo = false;
-                    clearInterval(intervalo1);
-                    clearInterval(intervalo2);
+                if (event.keyCode == 66) {
+                    clearInterval(animacion);
+                    console.log('Parar animación')
                 }
             }
         }, false);
